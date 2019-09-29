@@ -26,8 +26,7 @@ namespace shu
                         var s = sr.ReadToEnd();
                         if (flagCSharpRegex)
                         {                            
-                            var rgx = new Regex(token, RegexOptions.Singleline);
-                            System.Console.WriteLine($"REGEX TOKEN [{token}]");
+                            var rgx = new Regex(token, RegexOptions.Singleline);                            
                             System.Console.Write(rgx.Replace(s, replacement));
                         }
                         else
