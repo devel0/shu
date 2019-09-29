@@ -30,8 +30,7 @@ namespace shu
                         }
                         else
                             System.Console.Write(s.Replace(token, (string)replacement));
-                    }
-                    System.Console.WriteLine($"using regex csharp token [{token}]");
+                    }                    
                 });
 
             });
