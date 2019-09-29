@@ -15,21 +15,22 @@ namespace shu
             {
                 var flagCSharpRegex = parserReplaceToken.AddShort("csregex", "token will treated as csharp regex");
                 var _token = parserReplaceToken.AddMandatoryParameter("token", "token to search for");
-                var replacement = parserReplaceToken.AddMandatoryParameter("replacement", "text to replace where token was found");
+                var _replacement = parserReplaceToken.AddMandatoryParameter("replacement", "text to replace where token was found");
 
                 parserReplaceToken.OnCmdlineMatch(() =>
                 {
                     var token = (string)_token;
+                    var replacement = Regex.Unescape((string)_replacement);
                     using (var sr = new StreamReader(Console.OpenStandardInput()))
                     {
                         var s = sr.ReadToEnd();
                         if (flagCSharpRegex)
                         {                            
                             var rgx = new Regex(token);
-                            System.Console.Write(rgx.Replace(s, (string)replacement));
+                            System.Console.Write(rgx.Replace(s, replacement));
                         }
                         else
-                            System.Console.Write(s.Replace(token, (string)replacement));
+                            System.Console.Write(s.Replace(token, replacement));
                     }                    
                 });
 
