@@ -1,4 +1,4 @@
-# btrfs-rsync
+# shu
 
 [![NuGet Badge](https://buildstats.info/nuget/shu)](https://www.nuget.org/packages/shu/)
 
