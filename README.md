@@ -27,6 +27,17 @@ dotnet tool update -g shu
 echo 'export PATH=$PATH:~/.dotnet/tools' >> ~/.bashrc
 ```
 
+## enable completion
+
+to enable completion edit `/etc/bash_completion.d/shu`
+
+```sh
+_fn() {  
+        COMPREPLY=($(SHOW_COMPLETIONS=1 shu ${COMP_LINE:2}))
+}
+complete -F _fn shu
+```
+
 ## command line
 
 ```sh
