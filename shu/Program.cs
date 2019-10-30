@@ -11,9 +11,10 @@ namespace shu
         {
             CmdlineParser.Create("shell utils", (parser) =>
             {
-                parser.AddShort("h", "show usage", null, (item) => item.MatchParser.PrintUsage());
+                parser.AddShortLong("h", "help", "show usage", null, (item) => item.MatchParser.PrintUsage());
 
                 ShellUtilities.RegisterReplaceToken(parser);
+                ShellUtilities.RegisterMatchRegex(parser);
                 
                 parser.OnCmdlineMatch(() =>
                 {

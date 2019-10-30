@@ -55,11 +55,33 @@ Global flags:
   -h              show usage
 ```
 
+### match regex
+
+```sh
+Usage: shu match-regex FLAGS regex fmt
+
+match regex groups
+
+Global flags:
+  -h,--help   show usage
+
+Parameters
+  regex       c# regex
+  fmt         format string ( use \N to print Nth group in place )
+```
+
+**example**
+
+```sh
+devel0@tuf:/opensource/shu$ acpi -b
+Battery 0: Unknown, 97%
+devel0@tuf:/opensource/shu$ acpi -b | shu match-regex '[,\s]*(\d+)%' 'battery percent is [\\1]'
+battery percent is [97]
+```
+
 ### replace token
 
 ```sh
-missing required parameter [token]
-
 Usage: shu replace-token FLAGS token replacement
 
 replace token from given standard input (not optimized for huge files)
@@ -68,12 +90,14 @@ Optional flags:
   -csregex      token will treated as csharp regex
 
 Global flags:
-  -h            show usage
+  -h,--help     show usage
 
 Parameters
   token         token to search for
   replacement   text to replace where token was found
 ```
+
+[**example**](https://github.com/devel0/security-manager/blob/8ed0f574fa649d5131d2ea2ea8e2dea5338500d2/docker/Dockerfile#L49-L52)
 
 ## How this project was built
 
