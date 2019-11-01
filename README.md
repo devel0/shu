@@ -12,12 +12,6 @@ SHell Utilities
 - Install the tool:
 
 ```sh
-dotnet tool install -g shu
-```
-
-- To update if already installed:
-
-```sh
 dotnet tool update -g shu
 ```
 
