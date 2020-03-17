@@ -1,7 +1,7 @@
 <Project Sdk="Microsoft.NET.Sdk">
     <PropertyGroup>
         <OutputType>Exe</OutputType>
-        <TargetFrameworks>netcoreapp2.1;netcoreapp3.0</TargetFrameworks>
+        <TargetFrameworks>netcoreapp2.1;netcoreapp3.1</TargetFrameworks>
     </PropertyGroup>
     <PropertyGroup>
         <GenerateDocumentationFile>true</GenerateDocumentationFile>
@@ -17,8 +17,8 @@
         <PackageLicenseExpression>MIT</PackageLicenseExpression>
     </PropertyGroup>
     <ItemGroup>
-        <PackageReference Include="netcore-cmdline" Version="0.2.1" />
-        <PackageReference Include="netcore-util" Version="1.0.32" />
+        <PackageReference Include="netcore-cmdline" Version="0.2.2" />
+        <PackageReference Include="netcore-util" Version="1.2.2" />
     </ItemGroup>
     <ItemGroup>
         <!-- <ProjectReference Include="..\..\netcore-util\netcore-util\netcore-util.csproj" /> -->

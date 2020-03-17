@@ -10,7 +10,7 @@
             "request": "launch",
             "preLaunchTask": "build",
             // If you have changed target frameworks, make sure to update the program path.
-            "program": "${workspaceFolder}/shu/bin/Debug/netcoreapp3.0/shu.dll",
+            "program": "${workspaceFolder}/shu/bin/Debug/netcoreapp3.1/shu.dll",
             "args": [],
             "cwd": "${workspaceFolder}/shu",
             // For more information about the 'console' field, see https://aka.ms/VSCode-CS-LaunchJson-Console

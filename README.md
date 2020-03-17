@@ -93,6 +93,23 @@ Parameters
 
 [**example**](https://github.com/devel0/security-manager/blob/8ed0f574fa649d5131d2ea2ea8e2dea5338500d2/docker/Dockerfile#L49-L52)
 
+### cpu autolimiter
+
+- requirements:
+
+```sh
+apt-get -y install cpulimit cpustat
+```
+
+- example:
+
+```sh
+$ shu cpu-autolimiter
+process pid=29696 with cpu=54.46% will limited to cpu=20% [/opt/google/chrome/nacl_helper]
+$ ps ax | grep cpulimit
+20693 ?        S      0:00 cpulimit --background --pid 29696 --limit 20
+```
+
 ## How this project was built
 
 ```sh

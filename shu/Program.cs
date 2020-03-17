@@ -15,6 +15,7 @@ namespace shu
 
                 ShellUtilities.RegisterReplaceToken(parser);
                 ShellUtilities.RegisterMatchRegex(parser);
+                ShellUtilities.RegisterAutoCPULimiter(parser);
                 
                 parser.OnCmdlineMatch(() =>
                 {
