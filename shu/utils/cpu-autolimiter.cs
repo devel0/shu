@@ -3,8 +3,7 @@ using System.IO;
 using System.Text.RegularExpressions;
 using System.Threading;
 using SearchAThing;
-using SearchAThing.Util;
-using static SearchAThing.Util.Toolkit;
+using static SearchAThing.UtilToolkit;
 using System.Linq;
 using static System.FormattableString;
 

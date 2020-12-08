@@ -110,6 +110,33 @@ $ ps ax | grep cpulimit
 20693 ?        S      0:00 cpulimit --background --pid 29696 --limit 20
 ```
 
+### graph-area
+
+compute area under graph from given points xy file ( [example input file](data/sample.txt) )
+
+```sh
+Usage: shu graph-area FLAGS filename
+
+compute area under graph XY
+
+Optional flags:
+  -d=VAL      decimal separator (default=.)
+  -f=VAL      field separator (default=,)
+  -x          generate dxf lwpolyline output
+
+Global flags:
+  -h,--help   show usage
+
+Parameters
+  filename    simple XY column file
+```
+
+```sh
+$ shu graph-area -x -d . -f , shu/data/graph-area/sample.txt
+area: 380.7128486182038
+[/home/devel0/Documents/opensource/shu/data/graph-area/sample.dxf] written.
+```
+
 ## How this project was built
 
 ```sh
