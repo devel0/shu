@@ -126,7 +126,7 @@ $ ps ax | grep cpulimit
 
 ### graph-area
 
-compute area under graph from given points xy file ( [example input file](data/sample.txt) )
+compute area under graph from given points xy file ( [example input file](data/graph-area/sample.txt) )
 
 ```sh
 Usage: shu graph-area FLAGS filename
