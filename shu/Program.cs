@@ -23,7 +23,7 @@ namespace shu
                 });
 
                 parser.Run(args);
-            }, useColors: true);
+            }, useColors: true, unescapeArguments: true);
         }
     }
 }
