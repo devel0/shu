@@ -1,6 +1,6 @@
 # shu
 
-[![NuGet Badge](https://buildstats.info/nuget/shu)](https://www.nuget.org/packages/shu/)
+<!-- [![NuGet Badge](https://buildstats.info/nuget/shu/)](https://www.nuget.org/packages/shu/) -->
 
 SHell Utilities
 
