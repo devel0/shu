@@ -6,6 +6,20 @@ SHell Utilities
 
 <hr/>
 
+<!-- TOC -->
+- [shu](#shu)
+  * [Quickstart](#quickstart)
+  * [enable completion](#enable-completion)
+  * [command line](#command-line)
+    + [match regex](#match-regex)
+    + [replace token](#replace-token)
+    + [cpu autolimiter](#cpu-autolimiter)
+    + [graph-area](#graph-area)
+  * [How this project was built](#how-this-project-was-built)
+<!-- TOCEND -->
+
+<hr/>
+
 ## Quickstart
 
 - Requirements: [Download NET Core SDK](https://dotnet.microsoft.com/download)
@@ -147,11 +161,14 @@ dotnet new sln
 dotnet new console -n shu
 
 cd shu
-dotnet add package netcore-util --version 1.0.32
-dotnet add package netcore-cmdline --version 0.2.1
+dotnet add package netcore-util --version 1.7.1
+dotnet add package netcore-cmdline --version 0.3.1
+dotnet add reference ../../netDxf/netDxf
 cd ..
 
 dotnet sln shu.sln add shu
 dotnet build
-./shu/bin/Debug/netcoreapp3.0/shu
+./shu/bin/Debug/net5.0/shu
 ```
+
+note: netDxf from [this repo](https://github.com/haplokuon/netDxf/tree/net_5.0) net_5.0 branch
