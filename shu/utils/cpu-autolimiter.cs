@@ -31,9 +31,21 @@ namespace shu
                     var mincpu_find = _mincpu_find.ArgValues.Count == 0 ? DEFAULT_mincpu_find : ((string)_mincpu_find).InvDoubleParse();
                     var maxcpu_set = _maxcpu_set.ArgValues.Count == 0 ? DEFAULT_maxcpu_set : ((string)_maxcpu_set).InvDoubleParse();
 
+                    if (UtilToolkit.SearchInPath("cpustat") == null)
+                    {
+                        System.Console.WriteLine($"requirements: apt install cpustat");
+                        return;
+                    }
+
+                    if (UtilToolkit.SearchInPath("cpulimit") == null)
+                    {
+                        System.Console.WriteLine($"requirements: apt install cpulimit");
+                        return;
+                    }
+
                     var task = Exec("cpustat", new[] { "1", "1" }, CancellationToken.None, false);
                     task.Wait();
-                    var pid_cpu_lines = task.Result.output.Lines().Skip(1)
+                    var pid_cpu_lines = task.Result.Output.Lines().Skip(1)
                         .Select(line =>
                         {
                             var ss = line.Split(" ").Select(w => w.Trim()).Where(r => r.Length > 0).ToArray();
