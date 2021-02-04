@@ -18,7 +18,7 @@ namespace shu
             var DEFAULT_mincpu_find = 50d;
             var DEFAULT_maxcpu_set = 20d;
 
-            var cmdRegex = parser.AddCommand("cpu-autolimiter", "autolimit cpu process usage", (parserCpuLimiter) =>
+            var cmdRegex = parser.AddCommand("cpu-autolimiter", "autolimit cpu usage for processes that uses more than mincpu-find", (parserCpuLimiter) =>
             {
                 var _mincpu_find = parserCpuLimiter.AddShort("mincpu-find",
                     Invariant($"minimum cpu load to match process [default={DEFAULT_mincpu_find}]"), "val");
