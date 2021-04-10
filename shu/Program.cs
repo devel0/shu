@@ -17,6 +17,7 @@ namespace shu
                 ShellUtilities.RegisterMatchRegex(parser);
                 ShellUtilities.RegisterAutoCPULimiter(parser);
                 ShellUtilities.RegisterGraphArea(parser);
+                ShellUtilities.RegisterLogic2FreqGraph(parser);
                 
                 parser.OnCmdlineMatch(() =>
                 {

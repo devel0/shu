@@ -11,7 +11,9 @@
             "preLaunchTask": "build",
             // If you have changed target frameworks, make sure to update the program path.
             "program": "${workspaceFolder}/shu/bin/Debug/net5.0/shu.dll",
-            "args": ["graph-area", "-x", "-d", ".", "${workspaceFolder}/data/graph-area/sample.txt"],
+            // "args": ["graph-area", "-x", "-d", ".", "${workspaceFolder}/data/graph-area/sample.txt"],            
+            //"args": ["cpu-autolimiter"],
+            "args": ["logic2-freq-graph", "/home/devel0/k/digital.csv", "\"Channel 0\""],
             "cwd": "${workspaceFolder}/shu",
             // For more information about the 'console' field, see https://aka.ms/VSCode-CS-LaunchJson-Console
             "console": "internalConsole",

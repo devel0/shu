@@ -124,6 +124,22 @@ $ ps ax | grep cpulimit
 20693 ?        S      0:00 cpulimit --background --pid 29696 --limit 20
 ```
 
+### logic2-freq-graph
+
+from [Logic2](https://github.com/saleae/logic2-extensions) csv export generate a frequency graph.
+
+Follow example is recording of "G0 X10" within [Marlin](https://github.com/MarlinFirmware/Marlin) configured to use SCurve motion.
+
+![](data/logic2-freq-graph/logic2-logic-analyzer.png)
+
+this is the output of the command
+
+```sh
+shu logic2-freq-graph ~/t/digital.csv "Channel 0"
+```
+
+![](data/logic2-freq-graph/logic2-freq-graph.png)
+
 ### graph-area
 
 compute area under graph from given points xy file ( [example input file](data/graph-area/sample.txt) )
