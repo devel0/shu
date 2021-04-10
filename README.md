@@ -7,15 +7,15 @@ SHell Utilities
 <hr/>
 
 <!-- TOC -->
-- [shu](#shu)
-  * [Quickstart](#quickstart)
-  * [enable completion](#enable-completion)
-  * [command line](#command-line)
-    + [match regex](#match-regex)
-    + [replace token](#replace-token)
-    + [cpu autolimiter](#cpu-autolimiter)
-    + [graph-area](#graph-area)
-  * [How this project was built](#how-this-project-was-built)
+* [Quickstart](#quickstart)
+* [enable completion](#enable-completion)
+* [command line](#command-line)
+  + [match regex](#match-regex)
+  + [replace token](#replace-token)
+  + [cpu autolimiter](#cpu-autolimiter)
+  + [logic2-freq-graph](#logic2-freq-graph)
+  + [graph-area](#graph-area)
+* [How this project was built](#how-this-project-was-built)
 <!-- TOCEND -->
 
 <hr/>
