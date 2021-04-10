@@ -105,7 +105,7 @@ namespace shu
 
                     if (dxf != null)
                     {
-                        dxf.Entities.Add(lw);
+                        dxf.AddEntity(lw);
                         dxf.Save(dxfPathfilename, true);
                         System.Console.WriteLine($"[{dxfPathfilename}] written.");
                     }
