@@ -30,7 +30,10 @@ namespace shu
         {
             public double t { get; set; }
             public bool v { get; set; }
+
             public double periodSec { get; set; }
+
+            public CsvItem prev { get; set; }
         }
 
         public class MainWindow : Win
@@ -45,6 +48,7 @@ namespace shu
                 "resm:OxyPlot.Avalonia.Themes.Default.xaml?assembly=OxyPlot.Avalonia"
             })
             {
+                Title = csv_pathfilename;
                 string hdr = "";
                 using (var sr = new StreamReader(csv_pathfilename))
                 {
@@ -57,7 +61,7 @@ namespace shu
                     int idx = -1;
                     for (int i = 0; i < hdr_ss.Length; ++i)
                     {
-                        if (hdr_ss[i].Trim() == chanFilter.Trim())
+                        if (hdr_ss[i].Trim().StripBegin('"').StripEnd('"') == chanFilter.Trim().StripBegin('"').StripEnd('"'))
                         {
                             idx = i;
                             break;
@@ -103,23 +107,28 @@ namespace shu
                             }
                             if (x.prev != null && !x.prev.v)
                             {
+                                x.item.prev = periodBegin;
                                 periodBegin.periodSec = x.item.t - periodBegin.t;
                                 periodBegin = x.item;
                             }
                         }
                     }
 
-                    var f1 = new OxyPlot.Series.LineSeries()
-                    {
-                        Title = hdr_ss[col],
-                        DataFieldX = "x",
-                        DataFieldY = "y",
-
-                        ItemsSource = csv_data
+                    var speed_items = csv_data
                             .Where(r => r.periodSec > 0)
                             .Select(x => new PlotData(
                                 x.t + x.periodSec / 2,
-                                1.0 / x.periodSec))
+                                1.0 / x.periodSec
+                                ))
+                            .OrderBy(w => w.x);
+
+                    var f1 = new OxyPlot.Series.LineSeries()
+                    {
+                        Title = hdr_ss[col] + $" ({speed_items.Count()}pts)",
+                        DataFieldX = "x",
+                        DataFieldY = "y",
+
+                        ItemsSource = speed_items
                     };
                     pv.Model.Series.Add(f1);
                 }
@@ -156,7 +165,7 @@ namespace shu
                     var columnsFilter = (string)_columnsFilter;
 
                     MainWindow.csv_pathfilename = pathfilename;
-                    MainWindow.chansFilter = columnsFilter;
+                    MainWindow.chansFilter = columnsFilter;                    
 
                     GuiToolkit.CreateGui<MainWindow>();
 
