@@ -13,7 +13,7 @@
             "program": "${workspaceFolder}/shu/bin/Debug/net5.0/shu.dll",
             // "args": ["graph-area", "-x", "-d", ".", "${workspaceFolder}/data/graph-area/sample.txt"],            
             //"args": ["cpu-autolimiter"],
-            "args": ["logic2-freq-graph", "/home/devel0/k/digital.csv", "\"Channel 0\""],
+            "args": ["logic2-freq-graph", "/home/devel0/a2/digital.csv", "\"Channel 0\""],
             "cwd": "${workspaceFolder}/shu",
             // For more information about the 'console' field, see https://aka.ms/VSCode-CS-LaunchJson-Console
             "console": "internalConsole",
