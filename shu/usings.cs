@@ -12,7 +12,4 @@ global using SearchAThing;
 global using SearchAThing.Ext;
 global using static SearchAThing.Ext.Toolkit;
 
-global using SearchAThing.Util;
-global using static SearchAThing.Util.Toolkit;
-
 global using SearchAThing.Cmdline;
