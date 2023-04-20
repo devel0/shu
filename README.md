@@ -12,9 +12,6 @@ SHell Utilities
 * [command line](#command-line)
   + [match regex](#match-regex)
   + [replace token](#replace-token)
-  + [cpu autolimiter](#cpu-autolimiter)
-  + [logic2-freq-graph](#logic2-freq-graph)
-  + [graph-area](#graph-area)
 * [How this project was built](#how-this-project-was-built)
 <!-- TOCEND -->
 
@@ -107,66 +104,6 @@ Parameters
 
 [**example**](https://github.com/devel0/security-manager/blob/8ed0f574fa649d5131d2ea2ea8e2dea5338500d2/docker/Dockerfile#L49-L52)
 
-### cpu autolimiter
-
-- requirements:
-
-```sh
-apt-get -y install cpulimit cpustat
-```
-
-- example:
-
-```sh
-$ shu cpu-autolimiter
-process pid=29696 with cpu=54.46% will limited to cpu=20% [/opt/google/chrome/nacl_helper]
-$ ps ax | grep cpulimit
-20693 ?        S      0:00 cpulimit --background --pid 29696 --limit 20
-```
-
-### logic2-freq-graph
-
-from [Logic2](https://github.com/saleae/logic2-extensions) csv export generate a frequency graph.
-
-Follow example is recording of "G0 X10" within [Marlin](https://github.com/MarlinFirmware/Marlin) configured to use SCurve motion.
-
-![](data/logic2-freq-graph/logic2-logic-analyzer.png)
-
-this is the output of the command
-
-```sh
-shu logic2-freq-graph ~/t/digital.csv "Channel 0"
-```
-
-![](data/logic2-freq-graph/logic2-freq-graph.png)
-
-### graph-area
-
-compute area under graph from given points xy file ( [example input file](data/graph-area/sample.txt) )
-
-```sh
-Usage: shu graph-area FLAGS filename
-
-compute area under graph XY
-
-Optional flags:
-  -d=VAL      decimal separator (default=.)
-  -f=VAL      field separator (default=,)
-  -x          generate dxf lwpolyline output
-
-Global flags:
-  -h,--help   show usage
-
-Parameters
-  filename    simple XY column file
-```
-
-```sh
-$ shu graph-area -x -d . -f , shu/data/graph-area/sample.txt
-area: 380.7128486182038
-[/home/devel0/Documents/opensource/shu/data/graph-area/sample.dxf] written.
-```
-
 ## How this project was built
 
 ```sh
@@ -177,14 +114,10 @@ dotnet new sln
 dotnet new console -n shu
 
 cd shu
-dotnet add package netcore-util --version 1.7.1
-dotnet add package netcore-cmdline --version 0.3.1
-dotnet add reference ../../netDxf/netDxf
+dotnet add package netcore-util
+dotnet add package netcore-cmdline
 cd ..
 
 dotnet sln shu.sln add shu
 dotnet build
-./shu/bin/Debug/net5.0/shu
 ```
-
-note: netDxf from [this repo](https://github.com/haplokuon/netDxf/tree/net_5.0) net_5.0 branch

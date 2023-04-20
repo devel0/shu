@@ -1,8 +1,3 @@
-using System;
-using System.IO;
-using System.Text.RegularExpressions;
-using SearchAThing;
-
 namespace shu
 {
 
@@ -23,6 +18,7 @@ namespace shu
                     using (var sr = new StreamReader(Console.OpenStandardInput()))
                     {
                         var s = sr.ReadToEnd();                        
+                        // var s = "Battery 0: Unknown, 97%";
                         var rgx = new Regex(regexStr/*, RegexOptions.Singleline*/).Match(s);
                         if (rgx.Success)
                         {

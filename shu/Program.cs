@@ -1,9 +1,4 @@
-﻿using System;
-using System.IO;
-using System.Text.RegularExpressions;
-using SearchAThing;
-
-namespace shu
+﻿namespace shu
 {
     class Program
     {
@@ -15,16 +10,14 @@ namespace shu
 
                 ShellUtilities.RegisterReplaceToken(parser);
                 ShellUtilities.RegisterMatchRegex(parser);
-                ShellUtilities.RegisterAutoCPULimiter(parser);
-                ShellUtilities.RegisterGraphArea(parser);
-                ShellUtilities.RegisterLogic2FreqGraph(parser);
                 
                 parser.OnCmdlineMatch(() =>
                 {
                 });
 
                 parser.Run(args);
-            }, useColors: true, unescapeArguments: true);
+                // parser.Run(new[] { "match-regex", @"[,\\s]*(\\d+)%", @"battery percent is [\\\\1]"});
+            }, useColors: true, unescapeArguments: false);
         }
     }
 }
