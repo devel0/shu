@@ -7,12 +7,13 @@ SHell Utilities
 <hr/>
 
 <!-- TOC -->
-* [Quickstart](#quickstart)
-* [enable completion](#enable-completion)
-* [command line](#command-line)
-  + [match regex](#match-regex)
-  + [replace token](#replace-token)
-* [How this project was built](#how-this-project-was-built)
+- [Quickstart](#quickstart)
+- [enable completion](#enable-completion)
+- [command line](#command-line)
+  - [match regex](#match-regex)
+  - [replace token](#replace-token)
+- [How this project was built](#how-this-project-was-built)
+- [old version w/analyzer tool](#old-version-wanalyzer-tool)
 <!-- TOCEND -->
 
 <hr/>
@@ -120,4 +121,14 @@ cd ..
 
 dotnet sln shu.sln add shu
 dotnet build
+```
+
+## old version w/analyzer tool
+
+You can find old version 0.6.0 with analyzer tool [here](https://github.com/devel0/shu/tree/0a0d1b9a115c7d9262b947dd6a68469093de5fd1#logic2-freq-graph)
+
+to install that version use
+
+```sh
+dotnet tool install --global shu --version 0.6.0
 ```
